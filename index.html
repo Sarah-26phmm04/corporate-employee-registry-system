@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LavenderLabs Onboarding</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <div class="login-body-wrapper">
+        <div class="card">
+            <h2>Staff Onboarding</h2>
+
+            <form action="/register" method="POST">
+
+                <label>Full Name</label>
+                <input type="text" name="name" required
+                       placeholder="e.g. Anu Joseph">
+
+                <label>Corporate Email</label>
+                <input type="email" name="email" required
+                       placeholder="name@lavenderlabs.com">
+
+                <label>Account Password</label>
+                <input type="password" name="password"
+                       required minlength="4"
+                       placeholder="Min 4 characters">
+
+                <button type="submit" class="btn btn-submit btn-block">
+                    Create Staff Account
+                </button>
+
+            </form>
+
+            <p>Already onboarded?
+                <a href="/login.html">Sign In Here</a>
+            </p>
+        </div>
+    </div>
+    <script src="/script.js"></script>
+
+
+</body>
+</html>

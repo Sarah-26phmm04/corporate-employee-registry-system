@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LavenderLabs Authentication</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+
+    <div class="login-body-wrapper">
+        <div class="card">
+
+            <h2>Staff Authentication</h2>
+
+            <form action="/login" method="POST">
+
+                <label>Corporate Email</label>
+                <input type="email" name="email" required
+                       placeholder="Enter your email">
+
+                <label>Password</label>
+                <input type="password" name="password" required
+                       placeholder="Enter your password">
+
+                <button type="submit" class="btn btn-submit btn-block">
+                    Secure Login
+                </button>
+
+            </form>
+
+            <p>New staff member?
+                <a href="/">Register profile</a>
+            </p>
+
+        </div>
+    </div>
+    <script src="/script.js"></script>
+
+
+</body>
+</html>

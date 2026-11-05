@@ -1,0 +1,158 @@
+
+      /* 1. CLEAN CORE LAYOUT SETUP */
+body { 
+    font-family: 'Segoe UI', sans-serif; 
+    margin: 0; 
+    background: #f8f7fc; 
+    color: #3d3b4c; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* 2. LAYOUT STRUCTURAL WRAPPERS */
+header { 
+    background: #7c6a9f; 
+    color: white; 
+    padding: 1rem 2rem; 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+}
+footer { 
+    background: #7c6a9f; 
+    color: white; 
+    text-align: center; 
+    padding: 1rem; 
+    margin-top: auto; 
+}
+.container { 
+    max-width: 900px; 
+    margin: 2rem auto; 
+    padding: 0 1rem; 
+    width: 100%; 
+    box-sizing: border-box; 
+}
+
+/* NEW: SPECIAL CENTERING LAYOUT LAYER JUST FOR LOGIN/REGISTER PAGES */
+.login-body-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: calc(100vh - 2rem);
+    width: 100%;
+}
+
+/* 3. CARD AND INTERACTIVE ELEMENTS */
+.card { 
+    background: white; 
+    padding: 2.5rem; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 15px rgba(124, 106, 159, 0.1); 
+    width: 100%; 
+    max-width: 400px; 
+    box-sizing: border-box;
+}
+.profile-card { 
+    background: white; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 15px rgba(124, 106, 159, 0.1); 
+    padding: 2rem; 
+    margin-bottom: 2rem; 
+}
+.actions-card { 
+    background: white; 
+    border-radius: 12px; 
+    box-shadow: 0 4px 15px rgba(124, 106, 159, 0.1); 
+    padding: 2rem; 
+    box-sizing: border-box;
+}
+h1, h2 { color: #5a4b76; margin-top: 0; }
+.grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+.info-group { background: #fdfbfe; padding: 1rem; border-left: 4px solid #9d8abf; border-radius: 0 8px 8px 0; }
+.label { font-weight: bold; color: #928da3; font-size: 0.85rem; text-transform: uppercase; }
+.value { font-size: 1.1rem; margin-top: 0.2rem; color: #3d3b4c; }
+
+/* 4. INPUT INTERACTION ELEMENT FIELDS */
+label { display: block; margin-bottom: 0.4rem; color: #7c6a9f; font-weight: 600; }
+input { width: 100%; padding: 0.7rem; margin-bottom: 1.2rem; border: 1px solid #d3cce3; border-radius: 6px; box-sizing: border-box; outline: none; }
+input:focus { border-color: #9d8abf; }
+
+/* 5. UNIFIED BUTTON ENGINE RULES */
+.btn { display: inline-block; padding: 0.7rem 1.5rem; margin-right: 0.5rem; margin-bottom: 0.5rem; text-decoration: none; color: white; border-radius: 20px; font-weight: bold; text-align: center; border: none; cursor: pointer; font-size: 1rem; box-sizing: border-box; }
+.btn-block { display: block; width: 100%; }
+.btn-update { background: #bca0dc; }
+.btn-update:hover { background: #a382c9; }
+.btn-delete { background: #df7373; }
+.btn-delete:hover { background: #c65353; }
+.btn-logout { background: #928da3; }
+.btn-logout:hover { background: #767187; }
+
+p { text-align: center; margin-top: 1.5rem; font-size: 0.9rem; color: #928da3; }
+a { color: #7c6a9f; text-decoration: none; font-weight: bold; }
+
+    
+    /* CENTER LOGIN AND REGISTRATION CARDS */
+
+.login-body-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 2rem 1rem;
+    box-sizing: border-box;
+}
+
+/* STYLE SUBMIT BUTTON */
+
+.btn-submit {
+    background: #7c6a9f;
+    color: white;
+    border-radius: 8px;
+    padding: 0.85rem;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+.btn-submit:hover {
+    background: #5a4b76;
+}
+
+/* MOBILE RESPONSIVENESS */
+
+@media (max-width: 600px) {
+    .card {
+        max-width: 100%;
+        padding: 1.5rem;
+    }
+
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    header {
+        padding: 1rem;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+}
+/* CENTRE PROFILE UPDATE SUCCESS MESSAGE */
+
+.success-card {
+    text-align: center;
+    max-width: 500px;
+    padding: 3rem 2rem;
+}
+
+.success-card h2 {
+    text-align: center;
+    line-height: 1.5;
+}
+
+.success-card p {
+    text-align: center;
+    margin-bottom: 2rem;
+}

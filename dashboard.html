@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee Workspace Dashboard</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <header>
+        <h2> LavenderLabs Portal</h2>
+        <div><span>Authorized Staff: <strong>{{name}}</strong></span></div>
+    </header>
+
+    <div class="container">
+        <div class="profile-card">
+            <h1>Active Employee Profile</h1>
+            <p>Welcome back! Below are your verified internal corporate registry parameters currently pulled from the MongoDB database cluster.</p>
+            
+            <div class="grid">
+                <div class="info-group"><div class="label">Staff Full Name</div><div class="value">{{name}}</div></div>
+                <div class="info-group"><div class="label">Corporate Email Address</div><div class="value">{{email}}</div></div>
+                <div class="info-group"><div class="label">Assigned Department</div><div class="value">{{course}}</div></div>
+                <div class="info-group"><div class="label">Office Ext / Hotline</div><div class="value">{{phone}}</div></div>
+            </div>
+        </div>
+
+        <div class="actions-card">
+            <h2>Update My Profile Information</h2>
+            <p>Modify your display details securely below.</p>
+            
+            <!-- A real, working form that sends an update request -->
+            <form action="/update-profile" method="POST" style="margin-top: 1.5rem;">
+                <input type="hidden" name="email" value="{{email}}">
+                
+                <div style="margin-bottom: 1.2rem;">
+                    <label style="display: block; margin-bottom: 0.4rem; color: #7c6a9f; font-weight: 600;">Update Full Name</label>
+                    <input type="text" name="newName" placeholder="Enter new display name" required style="width: 100%; max-width: 400px; padding: 0.7rem; border: 1px solid #d3cce3; border-radius: 6px; outline: none;">
+                </div>
+
+                <div style="margin-bottom: 1.5rem;">
+                    <label style="display: block; margin-bottom: 0.4rem; color: #7c6a9f; font-weight: 600;">Update Phone Number</label>
+                    <input type="text" name="newPhone" placeholder="Enter new phone number" required style="width: 100%; max-width: 400px; padding: 0.7rem; border: 1px solid #d3cce3; border-radius: 6px; outline: none;">
+                </div>
+
+                <div style="margin-top: 1.5rem;">
+                    <button type="submit" class="btn btn-update" style="border: none; cursor: pointer; font-size: 1rem; padding: 0.8rem 2rem;">Save Profile Changes</button>
+                    <a href="/" class="btn btn-logout">Secure Log Out</a>
+                </div>
+            </form>
+        
+
+
+            <!-- DELETE ACCOUNT SECTION -->
+            <div style="margin-top: 2rem; padding-top: 1.5rem; border-top: 1px solid #ddd;">
+                <h3 style="color: #b04444;">Delete Account</h3>
+                <p>Permanently remove your employee account from the registry.</p>
+
+                <form action="/delete-account" method="POST">
+                    <input type="hidden" name="email" value="{{email}}">
+
+                    <button type="submit"
+                        style="background: #b04444; color: white; border: none; padding: 0.8rem 1.5rem; border-radius: 6px; cursor: pointer;">
+                        Delete My Account
+                    </button>
+                </form>
+            </div>
+        </div>
+
+        <script src="/script.js"></script>
+    </div>
+</body>
+</html>
