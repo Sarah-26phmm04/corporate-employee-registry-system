@@ -6,7 +6,7 @@ const { MongoClient } = require("mongodb");
 const client = new MongoClient("mongodb://127.0.0.1:27017");
 let users;
 
-// HELPER: SERVES FILES FROM THE PUBLIC FOLDER
+
 async function sendFile(res, fileName, contentType) {
     const filePath = path.join(__dirname, "public", fileName);
 
@@ -22,7 +22,7 @@ async function sendFile(res, fileName, contentType) {
     }
 }
 
-// HELPER: READS FORM DATA
+
 function readFormData(req) {
     return new Promise((resolve) => {
         let body = "";
@@ -37,7 +37,7 @@ function readFormData(req) {
     });
 }
 
-// MAIN SERVER LOGIC
+
 const server = http.createServer(async (req, res) => {
     try {
 
@@ -58,12 +58,12 @@ const server = http.createServer(async (req, res) => {
             return await sendFile(res, "style.css", "text/css");
         }
 
-        // SERVING SEPARATE JAVASCRIPT FILE
+      
         if (req.method === "GET" && req.url === "/script.js") {
             return await sendFile(res, "script.js", "application/javascript");
         }
 
-        // B. CREATE - USER REGISTRATION
+      
         if (req.method === "POST" && req.url === "/register") {
             const form = await readFormData(req);
 
@@ -100,7 +100,7 @@ const server = http.createServer(async (req, res) => {
             return res.end();
         }
 
-        // C. READ - USER LOGIN AND DASHBOARD
+       
         if (req.method === "POST" && req.url === "/login") {
             const form = await readFormData(req);
 
@@ -149,7 +149,7 @@ const server = http.createServer(async (req, res) => {
             }
         }
 
-        // D. READ - DISPLAY DATABASE USERS
+        
         if (req.method === "GET" && req.url === "/users") {
             const list = await users.find({}).toArray();
 
@@ -191,7 +191,7 @@ const server = http.createServer(async (req, res) => {
             `);
         }
 
-        // E. UPDATE - PROFILE MODIFICATION
+        
         if (req.method === "POST" && req.url === "/update-profile") {
             const form = await readFormData(req);
 
@@ -240,7 +240,7 @@ const server = http.createServer(async (req, res) => {
             `);
         }
 
-        // F. DELETE - ACCOUNT DEACTIVATION
+        
         if (req.method === "POST" && req.url === "/delete-account") {
             const form = await readFormData(req);
             const userEmail = form.get("email");
@@ -276,7 +276,7 @@ const server = http.createServer(async (req, res) => {
             `);
         }
 
-        // UNKNOWN ROUTE
+   
         res.writeHead(404, { "Content-Type": "text/plain" });
         res.end("Page not found");
 
@@ -291,7 +291,7 @@ const server = http.createServer(async (req, res) => {
     }
 });
 
-// SERVER INITIALIZATION AND DATABASE CONNECTION
+
 const PORT = 3000;
 
 async function startServer() {
