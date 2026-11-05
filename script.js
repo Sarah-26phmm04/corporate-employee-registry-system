@@ -1,10 +1,8 @@
-// ======================================
-// LAVENDERLABS - FRONTEND JAVASCRIPT
-// ======================================
+
 
 document.addEventListener("DOMContentLoaded", function () {
 
-    // 1. REGISTRATION FORM VALIDATION
+ 
 
     const registerForm = document.querySelector(
         'form[action="/register"]'
@@ -26,7 +24,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 2. LOGIN FORM VALIDATION
+   
 
     const loginForm = document.querySelector(
         'form[action="/login"]'
@@ -51,7 +49,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 3. PROFILE UPDATE CONFIRMATION
+    
 
     const updateForm = document.querySelector(
         'form[action="/update-profile"]'
@@ -71,7 +69,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 4. DELETE ACCOUNT CONFIRMATION
+  
 
     const deleteForm = document.querySelector(
         'form[action="/delete-account"]'
@@ -91,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // 5. WELCOME MESSAGE IN CONSOLE
+   
 
     console.log("LavenderLabs JavaScript loaded successfully!");
 
